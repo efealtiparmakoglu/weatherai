@@ -1,11 +1,30 @@
 {
   "name": "weatherai",
   "version": "1.0.0",
-  "description": "Full-stack application",
-  "main": "server.js",
+  "description": "Full-stack weatherai application - Professional, scalable, production-ready",
+  "main": "server/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "jest",
+    "build": "npm run build:client",
+    "build:client": "cd client && npm run build",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "react",
+    "fullstack",
+    "production-ready"
+  ],
+  "author": "Efe Altıparmakoğlu <efealtiparmakoglu@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efealtiparmakoglu/weatherai.git"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -13,9 +32,23 @@
     "dotenv": "^16.3.1",
     "mongoose": "^8.0.0",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.0",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "joi": "^17.11.0",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
